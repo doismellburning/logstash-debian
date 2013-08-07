@@ -3,6 +3,8 @@
 BASE_DIR=$(dirname $0)
 ROOT_DIR=${BASE_DIR}/root
 
+sudo chown -R $USER $ROOT_DIR
+
 JAR_DIR=${ROOT_DIR}/opt/logstash
 
 mkdir -p $JAR_DIR
@@ -15,6 +17,7 @@ then
 fi
 
 mkdir -p ${ROOT_DIR}/var/log/logstash
+mkdir -p ${ROOT_DIR}/etc/logstash/conf.d
 
 sudo chown -R 0:0 ${ROOT_DIR}
 
